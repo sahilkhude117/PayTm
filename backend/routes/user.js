@@ -118,7 +118,7 @@ router.put("/",authMiddleware, async(req,res) => {
     })
 })
 
-router.get("/search", async(req,res) => {
+router.get("/search",authMiddleware, async(req,res) => {
     const filter = req.query.filter || "";
 
     const users = await User.fin({
